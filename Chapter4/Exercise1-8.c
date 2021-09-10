@@ -20,6 +20,7 @@ int main() {
                 nl++;
                 break;
             default:
+                break;
                 ;
         }
     }
