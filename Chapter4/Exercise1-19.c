@@ -10,7 +10,7 @@ char *reverse(char *s) {
     for (i = 0; s[i] != '\0'; i++) {
         s1[i] = s[i];
     }
-    cnt = i;
+    cnt = i;    // Count of chars, '\0' not included
 
     char *ret = (char *) malloc((cnt+1) * sizeof(char));
     if (ret == NULL) {
@@ -28,9 +28,9 @@ char *reverse(char *s) {
 
 int main() {
     int c, i;
-    char s[999];
+    char s[999];    // s is used to store chars in current line
 
-    i = 0;
+    i = 0;  // Serial number of current char in the line.
     while ((c = getchar()) != EOF) {
         if (c != '\n') {
             s[i] = c;
@@ -38,8 +38,9 @@ int main() {
         }
         else {
             s[i] = '\0';
-            i = 0;
             printf("%s\n\n", reverse(s));
+            i = 0;  // The next char will be in a new line
+                    // Array s will be used to store the new line
         }
     }
 
